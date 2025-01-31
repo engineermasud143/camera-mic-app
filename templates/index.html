@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera and Microphone Access</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">MyApp</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Camera and Microphone Access</h1>
+        <video id="video" width="640" height="480" autoplay></video>
+        <button id="capture">Capture Photo</button>
+        <canvas id="canvas" width="640" height="480"></canvas>
+        <button id="record">Start Recording</button>
+        <button id="stop">Stop Recording</button>
+        <audio id="audio" controls></audio>
+        <form id="imageForm" method="POST" enctype="multipart/form-data" action="/upload_image">
+            <input type="hidden" id="imageData" name="imageData">
+        </form>
+        <form id="audioForm" method="POST" enctype="multipart/form-data" action="/upload_audio">
+            <input type="hidden" id="audioData" name="audioData">
+        </form>
+    </main>
+
+    <script src="/static/scripts.js"></script>
+    <script src="/static/burger.js"></script>
+</body>
+</html>
